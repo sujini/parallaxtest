@@ -18,7 +18,6 @@ class ScrollEvent{
         this.init();
     }
     init(){
-        console.log(this);
         EventDispatcher.add(this, Events.SCROLL_EVENT, this.doScroll);
     }
     perEvent(st,callback){
