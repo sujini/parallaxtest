@@ -1,0 +1,14 @@
+#wrap{
+    position: relative;
+    top:0;left:0;right:0;bottom:0;
+}
+.section{min-height: 500px;background-color: #fff;top:0;left:0;right:0;}
+
+.section2,.section4{background-color: #000;}
+.section2{height: 300vh;color: #fff;}
+.sticky{background-color: coral;height: 100vh;}
+path {
+    fill: none; 
+    stroke-width: 2;
+}
+.box{width: 100px;height: 100px;background-color: blueviolet;}

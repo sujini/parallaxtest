@@ -1,0 +1,30 @@
+{
+  "name": "grouptest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start:dev": "npx webpack serve --mode development",
+    "start:run": "npx webpack serve --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "core-js": "^3.14.0",
+    "gsap": "^3.6.1",
+    "jquery": "^3.6.0",
+    "smooth-scrollbar": "^8.6.2"
+  },
+  "browserslist": "ie 11"
+}
