@@ -1,6 +1,5 @@
 
 /* init  */
-
 (function(window, document, parent){
     if(typeof console=="undefined"){
         console = {
@@ -91,9 +90,7 @@ var Events = {
     STOPFLOWTEXT:"STOPFLOWTEXT",
     STARTCIRCLEMOTION:"STARTCIRCLEMOTION",
     STOPCIRCLEMOTION:"STOPCIRCLEMOTION",
-    HIGHLIGHT_GRAPH1:"HIGHLIGHT_GRAPH1",
-    HIGHLIGHT_GRAPH2:"HIGHLIGHT_GRAPH2",
-    HIGHLIGHT_GRAPH3:"HIGHLIGHT_GRAPH3"
+    SCROLL_EVENT:"SCROLL_EVENT"
 
 }
 

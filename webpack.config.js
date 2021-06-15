@@ -7,7 +7,7 @@ module.exports = (env,argv)=>{
     return{
         mode: isProduction ? 'production' : 'development',
         entry: {
-          main:["./js/main.js","./js/topslide.js"]
+            main:["./js/main.js","./js/topslide.js"]
         },
         output: {
             path: path.resolve(__dirname, 'dist'),

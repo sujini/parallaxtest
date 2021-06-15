@@ -2,11 +2,11 @@
     position: relative;
     top:0;left:0;right:0;bottom:0;
 }
-.section{min-height: 500px;background-color: #fff;top:0;left:0;right:0;}
+.section{position: relative; min-height: 500px;background-color: #fff;top:0;left:0;right:0;}
 
 .section2,.section4{background-color: #000;}
-.section2{height: 300vh;color: #fff;}
-.sticky{background-color: coral;height: 100vh;}
+.section2{height: 400vh;color: #fff;}
+.sticky{background-color: coral;height: 400px;width: 100%;}
 path {
     fill: none; 
     stroke-width: 2;

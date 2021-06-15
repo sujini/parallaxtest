@@ -20,15 +20,6 @@
  */
 
 /*!
- * cast `I.Scrollbar` to `Scrollbar` to avoid error
- *
- * `I.Scrollbar` is not assignable to `Scrollbar`:
- *     "privateProp" is missing in `I.Scrollbar`
- *
- * @see https://github.com/Microsoft/TypeScript/issues/2672
- */
-
-/*!
  * jQuery JavaScript Library v3.6.0
  * https://jquery.com/
  *
