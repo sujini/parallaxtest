@@ -90,7 +90,12 @@ var Events = {
     STOPFLOWTEXT:"STOPFLOWTEXT",
     STARTCIRCLEMOTION:"STARTCIRCLEMOTION",
     STOPCIRCLEMOTION:"STOPCIRCLEMOTION",
-    SCROLL_EVENT:"SCROLL_EVENT"
+    SCROLL_EVENT:"SCROLL_EVENT",
+    RESIZE:"RESIZE"
 
 }
 
+window.addEventListener('resize', function(e) {
+      
+    EventDispatcher.is(Events.RESIZE);
+});
