@@ -1,5 +1,5 @@
 # parallaxtest + smoothscroll
-parallax 스크롤 이벤트 라이브러리 기본구성
+parallax 스크롤 이벤트 라이브러리 기본구성  
 mac과 IE11이하에서는 기본스크롤 
 그외 브라우저는 smoothscroll사용
 
