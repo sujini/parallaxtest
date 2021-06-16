@@ -32,5 +32,5 @@ new ScrollEvent(start,gap,el,isSticky,callback);
 |gap|Number|시작위치에서 끝위치까지의 수치|
 |el|element|대상 엘리먼트|
 |isSticky|boolean|고정되어있는 효과 사용할지 여부|
-|callback|function||
+|callback|function|콜백|
 
