@@ -24,13 +24,12 @@ npm run start:run
 ``
 ### 사용법
 ```
-new ScrollEvent(start,gap,el,isSticky,callback);
+new ScrollEvent(el,stickyEl,isSticky,callback);
 ```
 |argument|type|설명|
 |:---|:---:|:---|
-|start|Number|시작위치|
-|gap|Number|시작위치에서 끝위치까지의 수치|
 |el|element|대상 엘리먼트|
+|stickyEl|element|el 안에 고정효과를 나타낼 엘리먼트|
 |isSticky|boolean|고정되어있는 효과 사용할지 여부|
 |callback|function|콜백 argument:per(0~1)|
 
