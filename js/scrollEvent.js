@@ -25,12 +25,12 @@ class ScrollEvent{
         let per = (st-this.start)/( (this.end>maxSt?maxSt:this.end)-this.start);
         per = per < 0 ? 0 : per > 1 ? 1 : per;     
     
-        if(this.beforePer==per && (per==0||per==1))return;
+        if(this.beforePer==per && (per==0||per==1)){ this.el.removeClass('will-change-transform');return;}
         callback(per);
        
     }
     doScroll(st) {   
-       
+        this.el.addClass('will-change-transform');
         this.perEvent(st,per=>{
             this.beforePer=per;
             this.callback && this.callback(per);

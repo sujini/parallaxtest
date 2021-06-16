@@ -6,9 +6,10 @@
 
 .section2,.section4{background-color: #000;}
 .section2{height: 400vh;color: #fff;}
-.sticky{background-color: coral;height: 400px;width: 100%;}
+.sticky{position: sticky; background-color: coral;height: 100vh;width: 100%;}
 path {
     fill: none; 
     stroke-width: 2;
 }
 .box{width: 100px;height: 100px;background-color: blueviolet;}
+.will-change-transform{will-change: transform;}
