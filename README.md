@@ -25,6 +25,7 @@ npm run start:run
 ### 사용법
 ```
 new ScrollEvent(start,gap,el,isSticky,callback);
+```
 |argument|type|설명|
 |:---|:---:|:---:|
 |start|Number|시작위치|
@@ -32,4 +33,4 @@ new ScrollEvent(start,gap,el,isSticky,callback);
 |el|element|대상 엘리먼트|
 |isSticky|boolean|고정되어있는 효과 사용할지 여부|
 |callback|function||
-```
+
