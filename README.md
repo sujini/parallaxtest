@@ -27,7 +27,7 @@ npm run start:run
 new ScrollEvent(start,gap,el,isSticky,callback);
 ```
 |argument|type|설명|
-|:---|:---:|:---:|
+|:---|:---:|:---|
 |start|Number|시작위치|
 |gap|Number|시작위치에서 끝위치까지의 수치|
 |el|element|대상 엘리먼트|
