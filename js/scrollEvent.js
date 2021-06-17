@@ -17,6 +17,8 @@ class ScrollEvent{
         this.beforePer=undefined;
         this.isSticky = isSticky || false;
         this.callback = callback;
+        this.isFixed=false;
+        this.isNotFixed=false;
         this.init();
     }
     init(){
@@ -30,27 +32,45 @@ class ScrollEvent{
     }
     perEvent(st,callback){
         let maxSt = isFakeScroll?document.querySelector('.scroll-content').clientHeight:document.body.clientHeight - window.innerHeight;
-        let per = (st-this.start)/( (this.end>maxSt?maxSt:this.end)-this.start);console.log('dd',per)
+        let per = (st-this.start)/( (this.end>maxSt?maxSt:this.end)-this.start);
         per = per < 0 ? 0 : per > 1 ? 1 : per;     
-    
-        if(this.beforePer==per && (per==0||per==1)){ 
-            (per==0 || per==1)?
-                (this.stickyEl.style.top=per*this.gap+"px",this.stickyEl.style.position='absolute')
-                :(this.stickyEl.style.position='fixed', this.stickyEl.style.top=0);
-            this.isSticky && this.stickyEl.classList.remove('will-change-transform');
-            return;
-        }
+
+        if(this.beforePer==per && (per==0||per==1))return;
         callback(per);
        
     }
     doScroll(st) {   
-        this.isSticky && this.stickyEl.classList.add('will-change-transform');
         this.perEvent(st,per=>{
             this.beforePer=per;
             this.callback && this.callback(per);
+          
+            if(!this.isSticky)return;
+            isFakeScroll && gsap.to(this.stickyEl, { y:per*this.gap, duration: 0});
+
+            if(!this.isNotFixed && (per==0 || per==1 )){
+                this.stickyEl.classList.remove('will-change-transform');
+               
+                !isFakeScroll && ($(this.stickyEl).attr('style','transform:translate(0, '+per*this.gap+'px)'));
+                              
+                this.isNotFixed = true;
+                this.isFixed = false;
+
+            }else if(!this.isFixed){
+                this.stickyEl.classList.add('will-change-transform');
+               
+                !isFakeScroll && ($(this.stickyEl).attr('style','transform:translate(0, 0);top:0;left:0;right:0;position:fixed'));
+                               
+                this.isFixed = true;
+                this.isNotFixed = false;
+                
+            }
+                /*
+                (per==0 || per==1)?
+                    (this.stickyEl.style.top=per*this.gap+"px",this.stickyEl.style.position='absolute')
+                    :(this.stickyEl.style.position='fixed', this.stickyEl.style.top=0);
+                */
+                
             
-            this.isSticky && isFakeScroll && gsap.to(this.stickyEl, { y:per*this.gap, duration: 0});
-           
      
         });
     }
