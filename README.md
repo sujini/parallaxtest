@@ -1,6 +1,6 @@
 # parallaxtest + smoothscroll
 parallax 스크롤 이벤트 기본구성.  
-mac과 IE11이하에서는 Native스크롤, 
+IE11이하에서는 Native스크롤, Mac에서는 css sticky,
 그외 브라우저는 smoothscroll사용
 
 
