@@ -34,6 +34,9 @@ class ScrollEvent{
         per = per < 0 ? 0 : per > 1 ? 1 : per;     
     
         if(this.beforePer==per && (per==0||per==1)){ 
+            (per==0 || per==1)?
+                (this.stickyEl.style.top=per*this.gap+"px",this.stickyEl.style.position='absolute')
+                :(this.stickyEl.style.position='fixed', this.stickyEl.style.top=0);
             this.isSticky && this.stickyEl.classList.remove('will-change-transform');
             return;
         }
@@ -45,17 +48,9 @@ class ScrollEvent{
         this.perEvent(st,per=>{
             this.beforePer=per;
             this.callback && this.callback(per);
-
-            if(!this.isSticky)return;
             
-            if(isFakeScroll){
-                gsap.to(this.stickyEl, { y:per*this.gap, duration: 0});
-            }else{
-                (per==0 || per==1)?
-                    (this.stickyEl.style.top=per*this.gap+"px",this.stickyEl.style.position='absolute')
-                    :(this.stickyEl.style.position='fixed', this.stickyEl.style.top=0)
-                  
-            }
+            this.isSticky && isFakeScroll && gsap.to(this.stickyEl, { y:per*this.gap, duration: 0});
+           
      
         });
     }
