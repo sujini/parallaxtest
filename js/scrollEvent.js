@@ -26,11 +26,11 @@ class ScrollEvent{
     resize(){
         this.gap = this.el.offsetHeight-(this.isSticky?this.stickyEl.offsetHeight:0);     
         this.end = this.start+this.gap; 
-        this.doScroll(this.beforePer);
+        $(window).trigger('scroll');
     }
     perEvent(st,callback){
         let maxSt = isFakeScroll?document.querySelector('.scroll-content').clientHeight:document.body.clientHeight - window.innerHeight;
-        let per = (st-this.start)/( (this.end>maxSt?maxSt:this.end)-this.start);
+        let per = (st-this.start)/( (this.end>maxSt?maxSt:this.end)-this.start);console.log('dd',per)
         per = per < 0 ? 0 : per > 1 ? 1 : per;     
     
         if(this.beforePer==per && (per==0||per==1)){ 
@@ -78,7 +78,8 @@ if(isFakeScroll){
     window.addEventListener('scroll', function(e) {
       
         let last_scroll = $(window).scrollTop();
-    
+        EventDispatcher.is(Events.SCROLL_EVENT,last_scroll);
+        /*
         if (!ticking) {
             window.requestAnimationFrame(function() {
                 EventDispatcher.is(Events.SCROLL_EVENT,last_scroll);
@@ -87,6 +88,7 @@ if(isFakeScroll){
     
             ticking = true;
         }
+        */
     });
 }
 
