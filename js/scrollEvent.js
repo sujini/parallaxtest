@@ -50,7 +50,7 @@ class ScrollEvent{
             if(!this.isNotFixed && (per==0 || per==1 )){
                 this.stickyEl.classList.remove('will-change-transform');
                
-                !isFakeScroll && ($(this.stickyEl).attr('style','transform:translate(0, '+per*this.gap+'px)'));
+                !isFakeScroll && isBelowIE11 && ($(this.stickyEl).attr('style','transform:translate(0, '+per*this.gap+'px)'));
                               
                 this.isNotFixed = true;
                 this.isFixed = false;
@@ -58,7 +58,7 @@ class ScrollEvent{
             }else if(!this.isFixed){
                 this.stickyEl.classList.add('will-change-transform');
                
-                !isFakeScroll && ($(this.stickyEl).attr('style','transform:translate(0, 0);top:0;left:0;right:0;position:fixed'));
+                !isFakeScroll && isBelowIE11 && ($(this.stickyEl).attr('style','transform:translate(0, 0);top:0;left:0;right:0;position:fixed'));
                                
                 this.isFixed = true;
                 this.isNotFixed = false;
